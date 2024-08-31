@@ -1,4 +1,4 @@
-A proof of the Lawvere fixed point theorem in Cartesian closed category in Lean 4, as well as generalizations given by Yankofsky (2005) and Roberts (2023).
+A proof of the Lawvere fixed point theorem in Cartesian closed category in Lean 4, as well as generalizations given by Yankofsky (2005) and Roberts (2021).
 
 References:
 
