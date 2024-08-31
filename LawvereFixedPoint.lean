@@ -1,2 +1,3 @@
 import LawvereFixedPoint.LawvereFixedPoint
+import LawvereFixedPoint.Magmoidal
 import LawvereFixedPoint.Types

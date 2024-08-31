@@ -5,7 +5,7 @@ Deriving Cantor's theorem from Lawvere's fixed point theorem
 import Mathlib.Logic.Function.Defs
 import Mathlib.CategoryTheory.Closed.Types
 
-import LawvereFixedPoint
+import LawvereFixedPoint.LawvereFixedPoint
 
 open CategoryTheory Limits
 
