@@ -1,19 +1,9 @@
 /-
+
 Lawvere's fixed point theorem for Cartesian closed categories
-
-Prior formalizations:
--- In Lean 3 by Matt Diamond (2022): https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/golfing.20Lawvere's.20fixed-point.20theorem
--- In Agda by Martin Escardo (2018): https://www.cs.bham.ac.uk/~mhe/agda-new/LawvereFPT.html
-
-References:
--- "Substructural fixed-point theorems and the diagonal argument: theme and variations" by Roberts (2021): https://arxiv.org/abs/2110.00239
--- "A universal approach to self-referential paradoxes, incompleteness and fixed points" by Yanofsky (2005): https://arxiv.org/abs/math/0305282
--- "Diagonal arguments and cartesian closed categories" by Lawvere (1969): http://tac.mta.ca/tac/reprints/articles/15/tr15.pdf
 
 -/
 
-import Mathlib.CategoryTheory.Products.Basic
-import Mathlib.CategoryTheory.Functor.Currying
 import Mathlib.CategoryTheory.Closed.Cartesian
 
 open CategoryTheory Limits CartesianClosed
@@ -48,7 +38,6 @@ theorem weak_point_surjective_of_point_surjective {C : Type u} [Category.{v} C] 
   exists x
   simp [hx]
 
--- couple useful lemmas
 lemma uncurry_decomp {C : Type u} [Category.{v} C] [HasFiniteProducts C] [CartesianClosed C] {A X Y : C} (f : X ⟶ A ⟹ Y) (x : ⊤_ C ⟶ X) (a : ⊤_ C ⟶ A) : a ≫ prod.lift (𝟙 A) (terminal.from A) ≫ uncurry (x ≫ f) = prod.lift a x ≫ uncurry f := by
   simp [uncurry_natural_left]
   repeat rw [←Category.assoc]
@@ -73,8 +62,6 @@ theorem lawvere_diagonal_weak {C : Type u} [Category.{v} C] [HasFiniteProducts C
 theorem lawvere_diagonal {C : Type u} [Category.{v} C] [HasFiniteProducts C] [CartesianClosed C] {A Y : C} (g : A ⟶ A ⟹ Y) (h : ¬ fixed_point_property Y) : ¬ point_surjective g :=
   mt weak_point_surjective_of_point_surjective (lawvere_diagonal_weak g h)
 
--- Yankofsky (2005) gives a genearlization that does not depend on Cartesian closed, only on binary products and terminal object
--- https://arxiv.org/abs/math/0305282
 def representable {C : Type u} [Category.{v} C] [HasTerminal C] {A X Y : C} [HasBinaryProduct X A] (g : X ⨯ A ⟶ Y) (f : X ⟶ Y) : Prop :=
   ∃ a : ⊤_C ⟶ A, ∀ x : ⊤_C ⟶ X, x ≫ f = (prod.lift x a) ≫ g
 
@@ -106,6 +93,6 @@ theorem yanofsky_fixed_point {C: Type u} [Category.{v} C] [HasTerminal C] {A X Y
                                    _ = prod.lift (a ≫ b') (a ≫ (𝟙 A)) ≫ f := by rw [Category.comp_id]
                                    _ = a ≫ prod.lift b' (𝟙 A) ≫ f := by rw [←Category.assoc, prod.comp_lift]
 
-
+-- deriving Lawvere's fixed point theorem from Yanofsky's
 theorem lawvere_fixed_point.proof2 {C: Type u} [Category.{v} C] [HasFiniteProducts C] [CartesianClosed C] {A Y : C} {g: A ⟶ A ⟹ Y} (h : weak_point_surjective g) : fixed_point_property Y :=
   yanofsky_fixed_point (representable_of_weak_point_surjective h) (IsSplitEpi.of_iso (𝟙 A))

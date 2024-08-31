@@ -1,8 +1,10 @@
 /-
+
 Magmoidal fixed point theorem
 
 References:
 "Substructural fixed-point theorems and the diagonal argument: theme and variations" by Roberts (2021): https://arxiv.org/abs/2110.00239
+
 -/
 
 import Mathlib.CategoryTheory.Products.Basic

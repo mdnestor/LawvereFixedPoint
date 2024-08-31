@@ -7,6 +7,6 @@ Prior formalizations:
 
 References:
 
-- "Diagonal arguments and cartesian closed categories" by Lawvere (1969): [http://tac.mta.ca/tac/reprints/articles/15/tr15.pdf](http://tac.mta.ca/tac/reprints/articles/15/tr15.pdf)
-- "A universal approach to self-referential paradoxes, incompleteness and fixed points" by Yanofsky (2005): [https://arxiv.org/abs/math/0305282](https://arxiv.org/abs/math/0305282)
-- "Substructural fixed-point theorems and the diagonal argument: theme and variations" by Roberts (2021): [https://arxiv.org/abs/2110.00239](https://arxiv.org/abs/2110.00239)
+- "Diagonal arguments and cartesian closed categories" by Lawvere (1969) [http://tac.mta.ca/tac/reprints/articles/15/tr15.pdf](http://tac.mta.ca/tac/reprints/articles/15/tr15.pdf)
+- "A universal approach to self-referential paradoxes, incompleteness and fixed points" by Yanofsky (2005) [https://arxiv.org/abs/math/0305282](https://arxiv.org/abs/math/0305282)
+- "Substructural fixed-point theorems and the diagonal argument: theme and variations" by Roberts (2021) [https://arxiv.org/abs/2110.00239](https://arxiv.org/abs/2110.00239)

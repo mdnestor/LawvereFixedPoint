@@ -1,5 +1,7 @@
 /-
+
 Deriving Cantor's theorem from Lawvere's fixed point theorem
+
 -/
 
 import Mathlib.Logic.Function.Defs
