@@ -1,4 +1,4 @@
-A proof of the Lawvere fixed point theorem in Cartesian closed category in Lean 4.
+Formalization of the Lawvere fixed point theorem in Lean 4.
 
 Prior formalizations:
 
